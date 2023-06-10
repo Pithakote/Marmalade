@@ -11,6 +11,12 @@ public class PlayerInputHandler : MonoBehaviour
     private RaycastHit _mouseRayHit;
     public Vector3 MouseClickPosition { get { return _mouseClickPosition; } }
     public bool IsClicked { get { return _isClicked; } }
+
+    private void Start()
+    {
+        _mainCamera = FindAnyObjectByType<Camera>();
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))

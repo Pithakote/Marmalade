@@ -13,15 +13,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4160969032848097780, guid: 2708c20f3797dff4cb985b598ff22569, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.87415
+      value: 0.2222805
       objectReference: {fileID: 0}
     - target: {fileID: 4160969032848097780, guid: 2708c20f3797dff4cb985b598ff22569, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.092476
+      value: 4.69
       objectReference: {fileID: 0}
     - target: {fileID: 4160969032848097780, guid: 2708c20f3797dff4cb985b598ff22569, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.9880404
+      value: -4.91
       objectReference: {fileID: 0}
     - target: {fileID: 4160969032848097780, guid: 2708c20f3797dff4cb985b598ff22569, type: 3}
       propertyPath: m_LocalRotation.w
@@ -93,3 +93,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 0}
   _moveSpeed: 2
+  _gravity: 15
+  _transformRespawnPoint: {x: 0, y: 0, z: 0}
+  _inputHandler: {fileID: 0}
+  _rotationSpeed: 30
+--- !u!114 &8569366241840719193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3162781618716453196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec8c43a208a018478afc9db02549870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 0}
+  _isClicked: 0
+  _mouseClickPosition: {x: 0, y: 0, z: 0}

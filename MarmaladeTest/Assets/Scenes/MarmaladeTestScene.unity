@@ -327,17 +327,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114413270440936802, guid: a104d8c121fad37478be13fabdae1b7a, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2934877060514560710, guid: a104d8c121fad37478be13fabdae1b7a, type: 3}
-      propertyPath: _gravity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2934877060514560710, guid: a104d8c121fad37478be13fabdae1b7a, type: 3}
-      propertyPath: _moveSpeed
-      value: 5
+      propertyPath: _rotationSpeed
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3162781618716453196, guid: a104d8c121fad37478be13fabdae1b7a, type: 3}
       propertyPath: m_Name
