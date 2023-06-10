@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerCar : Cars
 {
     [SerializeField] private PlayerInputHandler _inputHandler;
-
+    [SerializeField] private float _rotationSpeed = 30.0f;
     protected virtual void Update()
     {
         _inputHandler.GetComponent<PlayerInputHandler>();
@@ -23,6 +23,6 @@ public class PlayerCar : Cars
         }
 
         //looked at the code from here : https://forum.unity.com/threads/rotate-rigidbody-to-face-cursor-position-on-screen.570124/
-        _rb.rotation = Quaternion.LookRotation(_inputHandler.MouseClickPosition - transform.position);
+        _rb.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(_inputHandler.MouseClickPosition - transform.position), _rotationSpeed * Time.deltaTime);
     }
 }
