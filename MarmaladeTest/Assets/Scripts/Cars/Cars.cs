@@ -9,8 +9,12 @@ public abstract class Cars : MonoBehaviour
     [SerializeField] private float _moveSpeed = 2.0f;
     [SerializeField] private float _gravity = 15.0f;
 
+    [Header("Scene objects")]
+    [SerializeField] Vector3 _transformRespawnPoint;
     protected virtual void Awake()
     {
+        _transformRespawnPoint = transform.position;
+
         if (GetComponent<Rigidbody>())
         {
             _rb = GetComponent<Rigidbody>();
@@ -20,6 +24,7 @@ public abstract class Cars : MonoBehaviour
             _rb = gameObject.AddComponent<Rigidbody>();
         }
 
+        //wanted this to be kinematic but leaving it as non kinematic for this test
         //_rb.isKinematic = true;
     }
 
@@ -27,6 +32,11 @@ public abstract class Cars : MonoBehaviour
     void FixedUpdate()
     {
         _rb.MovePosition(transform.position + (Time.deltaTime * _moveSpeed * transform.forward)); //moving forward
-                           // + (Vector3.down * Time.deltaTime * _gravity)); ; // custom gravity for kinematic object
+    }
+
+    public void ResetPosition()
+    {
+        _rb.Sleep();
+        transform.position = _transformRespawnPoint;
     }
 }
