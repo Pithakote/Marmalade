@@ -7,8 +7,8 @@ public class LevelManagerMarmaladeTestScene : LevelManager
 {
     public LevelManager Instance { get; private set; }
 
-    [SerializeField] private MoneySpawner _moneySpawner;
-    public MoneySpawner MoneySpawner { get { return _moneySpawner; } }
+    [SerializeField] private MoneyManager _moneySpawner;
+    public MoneyManager MoneySpawner { get { return _moneySpawner; } }
     
     protected override void Awake()
     {
@@ -23,7 +23,7 @@ public class LevelManagerMarmaladeTestScene : LevelManager
             Instance = this;
         }
 
-        _moneySpawner = FindAnyObjectByType<MoneySpawner>();
+        _moneySpawner = FindAnyObjectByType<MoneyManager>();
     }
 
     // Start is called before the first frame update

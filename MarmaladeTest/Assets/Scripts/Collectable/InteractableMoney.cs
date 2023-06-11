@@ -15,7 +15,9 @@ internal class InteractableMoney : InteractableObject
     [SerializeField] private MeshFilter _meshFilter;
 
     [SerializeField] private int _moneyAmount;
-    [SerializeField] private string _moneyString; 
+    [SerializeField] private string _moneyString;
+      
+
     public void SetMoneyData(MoneySO moneyData)
     { 
         this._moneyData = moneyData;
@@ -28,7 +30,7 @@ internal class InteractableMoney : InteractableObject
         this._moneyString = this._moneyData.MoneyString;
         this._text.text = this._moneyData.MoneyString;  
 
-        GetComponent<Collider>().bounds.Encapsulate(this._meshFilter.mesh.bounds);
+        GetComponent<Collider>().bounds.Encapsulate(this._meshFilter.mesh.bounds);        
     }
 
     public override void OnInteracted()
@@ -40,6 +42,7 @@ internal class InteractableMoney : InteractableObject
         }
 
         Debug.Log("Collected amount: " + _moneyData.MoneyAmount);
+        this._moneyPresenter.UpdateMoney(_moneyAmount);
         Destroy(this.gameObject);
     }
 }
