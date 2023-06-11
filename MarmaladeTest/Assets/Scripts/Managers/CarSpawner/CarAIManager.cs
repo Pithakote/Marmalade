@@ -88,9 +88,12 @@ public class CarAIManager : MonoBehaviour
             _spawnTransform = _aiCarSpawnTransforms[Random.Range(0, _aiCarSpawnTransforms.Count)];
         }
 
+        await SpawnInInterval((int)(Random.Range(_spawnIntervalsInSeconds, _spawnIntervalsInSecondsMax) * 1000));
+
+      
+
         _spawnTransformOld = _spawnTransform;
 
-        await SpawnInInterval((int)(Random.Range(_spawnIntervalsInSeconds, _spawnIntervalsInSecondsMax) * 1000));
         if (_spawnCarQueue.Count > 0)
         {
             _spawnedCar = _spawnCarQueue.Dequeue();

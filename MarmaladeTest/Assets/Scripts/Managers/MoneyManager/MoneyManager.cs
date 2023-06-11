@@ -84,8 +84,9 @@ public class MoneyManager : MonoBehaviour
         }
 
         await SpawnInInterval((int)(_spawnIntervalsInSeconds * 1000));
-
-        _spawnPosition = transform.position +
+                
+        _spawnPosition = 
+            transform.position +
                                   new Vector3(Random.Range(-Random.insideUnitSphere.x * _spawnRadius, Random.insideUnitSphere.x * _spawnRadius),
                                                           0.0f,
                                                           Random.Range(-Random.insideUnitSphere.z * _spawnRadius, Random.insideUnitSphere.z * _spawnRadius));

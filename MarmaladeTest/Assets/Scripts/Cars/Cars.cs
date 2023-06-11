@@ -11,10 +11,12 @@ public abstract class Cars : MonoBehaviour
 
     [Header("Scene objects")]
     [SerializeField] protected Vector3 _transformRespawnPoint;
+    private Transform _transformSpawn;
 
     public void SetRespawnPoint(List<Transform> AICarSpawnTransforms)
     {
-        _transformRespawnPoint = AICarSpawnTransforms[Random.Range(0, AICarSpawnTransforms.Count)].position;
+        _transformSpawn = AICarSpawnTransforms[Random.Range(0, AICarSpawnTransforms.Count)];
+        _transformRespawnPoint = _transformSpawn.position;
     }
     protected virtual void Awake()
     {
@@ -48,5 +50,6 @@ public abstract class Cars : MonoBehaviour
     {
         _rb.Sleep();
         transform.position = _transformRespawnPoint;
+        transform.rotation = _transformSpawn.rotation;
     }
 }

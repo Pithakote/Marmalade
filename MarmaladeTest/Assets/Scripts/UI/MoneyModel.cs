@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoneyModel : MonoBehaviour
 {
     public delegate void MoneyUpdatedDelegate();
-    public MoneyUpdatedDelegate OnMoneyUpdatedEvent;
+    public event MoneyUpdatedDelegate OnMoneyUpdatedEvent;
 
 
     [SerializeField] private int _totalMoneyCollected = 0;

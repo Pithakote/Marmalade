@@ -31,9 +31,10 @@ public class CollisionHandler : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Colliding object is: " + collision.gameObject);
+        
         if (collision.gameObject.tag.Equals("Respawn"))
         {
+            Debug.Log("Colliding object is: " + collision.gameObject);
             _car.ResetPosition();
             return;
         }
