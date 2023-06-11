@@ -111,11 +111,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e085a3ec78f124c9b607974ba66ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moneyAmount: 0
+  _particleSystem: {fileID: 0}
   _moneyData: {fileID: 0}
   _text: {fileID: 0}
   _meshFilter: {fileID: 0}
-  _moneyAmount: 0
   _moneyString: 
+  _moneyManager: {fileID: 0}
 --- !u!1 &4604048852075275027
 GameObject:
   m_ObjectHideFlags: 0

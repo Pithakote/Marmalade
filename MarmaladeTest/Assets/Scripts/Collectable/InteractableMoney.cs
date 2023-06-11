@@ -42,6 +42,7 @@ public class InteractableMoney : InteractableObject
 
     public override void OnInteracted()
     {
+
         if(_moneyData == null)
         {
             Debug.LogWarning("The money data for " + gameObject.name + " is empty");
@@ -52,6 +53,8 @@ public class InteractableMoney : InteractableObject
         this._moneyPresenter.UpdateMoney(_moneyAmount);
 
         _moneyManager.RemoveMoney(this);
+
+        base.OnInteracted();
     }
 }
 
