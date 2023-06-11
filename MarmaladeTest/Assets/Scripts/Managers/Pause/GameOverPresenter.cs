@@ -11,6 +11,11 @@ public class GameOverPresenter : MonoBehaviour
     [SerializeField] MoneyModel _moneyModel;
     [SerializeField] private TMP_Text _finalScoreText;
 
+    private void Awake()
+    {
+        _gameOverObject.SetActive(false);
+    }
+
     public void ShowGameOver()
     {
         _gameOverObject.SetActive(true);
@@ -18,7 +23,10 @@ public class GameOverPresenter : MonoBehaviour
         _finalScoreText.text = "SCORE: " + _moneyModel.TotalMoneyCollected.ToString();
 
         _gameOverModel.GameOverFunction();
+    }
 
-
+    public void GoToMainMenu()
+    { 
+        _gameOverModel.ChangeScene();
     }
 }

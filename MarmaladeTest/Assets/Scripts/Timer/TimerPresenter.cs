@@ -29,7 +29,6 @@ public class TimerPresenter : MonoBehaviour
 
     private void ShowEndScreen()
     {
-        //((LevelManagerMarmaladeTestScene)LevelManager.Instance).GetGameOverPresenter.TogglePause();
         ((LevelManagerMarmaladeTestScene)LevelManager.Instance).GetGameOverPresenter.ShowGameOver();
         Debug.Log("Showing end screen");
     }

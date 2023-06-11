@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MarmaladeMainMenu.unity
+    guid: 74b3170f51247614a93a0c0952d99065
+  - enabled: 1
     path: Assets/Scenes/MarmaladeTestScene.unity
     guid: e46fc32b41d1d224c896377ccfb7e541
   m_configObjects: {}
