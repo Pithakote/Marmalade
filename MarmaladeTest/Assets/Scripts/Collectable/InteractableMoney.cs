@@ -14,7 +14,7 @@ public class InteractableMoney : InteractableObject
     [SerializeField] private TMP_Text _text;
     [SerializeField] private MeshFilter _meshFilter;
 
-    [SerializeField] private int _moneyAmount;
+    
     [SerializeField] private string _moneyString;
 
     [SerializeField] private MoneyManager _moneyManager;

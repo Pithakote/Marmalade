@@ -50,12 +50,12 @@ public class CarAIManager : MonoBehaviour
     [SerializeField] private Transform _spawnTransformOld;
 
     [SerializeField] public Queue<GameObject> _spawnCarQueue = new Queue<GameObject>();
-
+    private MoneyPresenter _moneyPresenter;
     public Queue<GameObject> SpawnCarQueue { get{ return _spawnCarQueue; } }
     public List<Transform> AICarSpawnTransforms { get { return _aiCarSpawnTransforms; } }
     protected virtual void Awake()
     {
-
+        _moneyPresenter = FindAnyObjectByType<MoneyPresenter>();
     }
 
     protected virtual void Start()
@@ -98,7 +98,8 @@ public class CarAIManager : MonoBehaviour
             _spawnedCar.gameObject.SetActive(true);
             _spawnedCar.transform.SetPositionAndRotation(_spawnTransform.position, _spawnTransform.rotation);
 
-           
+            _spawnedCar.GetComponent<InteractableObject>().SetMoneyPresenter(_moneyPresenter);
+
         }
         SpawnCar();
 

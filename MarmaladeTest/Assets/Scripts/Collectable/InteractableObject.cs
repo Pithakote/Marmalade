@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class InteractableObject : MonoBehaviour, IInteractable
 {
     protected MoneyPresenter _moneyPresenter;
-
+    [SerializeField] protected int _moneyAmount;
     protected virtual void Start()
     { 
         

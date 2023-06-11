@@ -16,6 +16,7 @@ public class InteractableCarAI : InteractableObject
   
     public override void OnInteracted()
     {
+        this._moneyPresenter.UpdateMoney(_moneyAmount);
         carAIManager.RemoveCar(this.gameObject);
     }
 }
