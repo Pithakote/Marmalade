@@ -43,7 +43,7 @@ public abstract class Cars : MonoBehaviour
     // Update is called once per frame
     protected virtual void FixedUpdate()
     {
-        _rb.MovePosition(transform.position + (Time.deltaTime * _moveSpeed * transform.forward)); //moving forward
+        _rb.MovePosition(transform.position + (GameTimeUtility._deltaTime * _moveSpeed * transform.forward)); //moving forward
     }
 
     public virtual void ResetPosition()

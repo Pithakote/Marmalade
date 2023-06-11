@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TimerPresenter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TimerModel _timerModel;
+
+    [SerializeField] private TMP_Text _timerText;
+
+    private void Awake()
     {
-        
+        _timerModel.TimerStopped += ShowEndScreen;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        _timerModel.TimerStopped -= ShowEndScreen;
+    }
+
+    private void Update()
+    {
+        UpdateTimerText();
+    }
+    private void UpdateTimerText()
+    {
+        _timerText.text = "Time Remaining: " + string.Format("{0:00} : {1:00}", _timerModel.Minutes, _timerModel.Seconds);
+    }
+
+    private void ShowEndScreen()
+    {
+        Debug.Log("Showing end screen");
     }
 }
