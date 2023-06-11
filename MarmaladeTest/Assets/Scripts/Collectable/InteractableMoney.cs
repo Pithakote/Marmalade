@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 
-internal class InteractableMoney : InteractableObject
+public class InteractableMoney : InteractableObject
 {
     public delegate void InteractableMoneyDelegate();
     public InteractableMoneyDelegate OnInteraction;
@@ -16,7 +16,14 @@ internal class InteractableMoney : InteractableObject
 
     [SerializeField] private int _moneyAmount;
     [SerializeField] private string _moneyString;
-      
+
+    [SerializeField] private MoneyManager _moneyManager;
+
+    protected override void Start()
+    {
+        base.Start();
+        _moneyManager = ((LevelManager.Instance) as LevelManagerMarmaladeTestScene).GetMoneyManager;
+    }
 
     public void SetMoneyData(MoneySO moneyData)
     { 
@@ -43,7 +50,8 @@ internal class InteractableMoney : InteractableObject
 
         Debug.Log("Collected amount: " + _moneyData.MoneyAmount);
         this._moneyPresenter.UpdateMoney(_moneyAmount);
-        Destroy(this.gameObject);
+
+        _moneyManager.RemoveMoney(this);
     }
 }
 

@@ -26,8 +26,10 @@ public class LevelManagerMarmaladeTestScene : LevelManager
     {
         base.Start();
 
-        _carAIManager.AddToQueue();
+        _moneyManager.AddToQueue();
         _moneyManager.SpawnMoney();
+
+        _carAIManager.AddToQueue();
         _carAIManager.SpawnCar();
     }
 

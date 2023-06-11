@@ -5,6 +5,8 @@ using UnityEditor;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
+
+//got the custom inspector code from here: https://gamedev.stackexchange.com/a/137592
 [CustomEditor(typeof(CarAIManager))]
 public class QueuePreview : Editor
 {
@@ -91,9 +93,6 @@ public class CarAIManager : MonoBehaviour
         await SpawnInInterval((int)(Random.Range(_spawnIntervalsInSeconds, _spawnIntervalsInSecondsMax) * 1000));
         if (_spawnCarQueue.Count > 0)
         {
-            Debug.LogWarning("The _spawnCarQueue count is less than or equal to 0");
-            
-
             _spawnedCar = _spawnCarQueue.Dequeue();
             _spawnedCar.GetComponent<Cars>().SetRespawnPoint(_aiCarSpawnTransforms);
             _spawnedCar.gameObject.SetActive(true);
