@@ -10,7 +10,12 @@ public abstract class Cars : MonoBehaviour
     [SerializeField] private float _moveSpeed = 2.0f;
 
     [Header("Scene objects")]
-    [SerializeField] Vector3 _transformRespawnPoint;
+    [SerializeField] protected Vector3 _transformRespawnPoint;
+
+    public void SetRespawnPoint(List<Transform> AICarSpawnTransforms)
+    {
+        _transformRespawnPoint = AICarSpawnTransforms[Random.Range(0, AICarSpawnTransforms.Count)].position;
+    }
     protected virtual void Awake()
     {
         _transformRespawnPoint = transform.position;
@@ -28,6 +33,10 @@ public abstract class Cars : MonoBehaviour
         //_rb.isKinematic = true;
     }
 
+    protected virtual void Start()
+    { 
+        
+    }
 
     // Update is called once per frame
     protected virtual void FixedUpdate()

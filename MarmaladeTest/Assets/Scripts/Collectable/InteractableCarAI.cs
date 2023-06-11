@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class InteractableCarAI : InteractableObject
 {
+    [SerializeField] CarAIManager carAIManager;
+
+    protected override void Start()
+    {
+        base.Start();
+
+        carAIManager = ((LevelManager.Instance) as LevelManagerMarmaladeTestScene).GetCarAIManager;
+    }
+
+  
     public override void OnInteracted()
     {
-        Destroy(this.gameObject);
+        carAIManager.RemoveCar(this.gameObject);
     }
 }

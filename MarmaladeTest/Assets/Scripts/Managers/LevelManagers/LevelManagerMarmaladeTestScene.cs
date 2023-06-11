@@ -5,31 +5,30 @@ using UnityEngine;
 
 public class LevelManagerMarmaladeTestScene : LevelManager
 {
-    public LevelManager Instance { get; private set; }
+   
 
-    [SerializeField] private MoneyManager _moneySpawner;
-    public MoneyManager MoneySpawner { get { return _moneySpawner; } }
-    
+    [SerializeField] private MoneyManager _moneyManager;
+    [SerializeField] private CarAIManager _carAIManager;
+    public MoneyManager GetMoneyManager { get { return _moneyManager; } }
+    public CarAIManager GetCarAIManager { get { return _carAIManager; } }
     protected override void Awake()
     {
         base.Awake();
 
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
+        
 
-        _moneySpawner = FindAnyObjectByType<MoneyManager>();
+        _moneyManager = FindAnyObjectByType<MoneyManager>();
+        _carAIManager = FindAnyObjectByType<CarAIManager>();
     }
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+
+        _carAIManager.AddToQueue();
+        _moneyManager.SpawnMoney();
+        _carAIManager.SpawnCar();
     }
 
     // Update is called once per frame

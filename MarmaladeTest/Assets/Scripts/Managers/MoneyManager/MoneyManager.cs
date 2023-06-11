@@ -30,10 +30,9 @@ public class MoneyManager : MonoBehaviour
 
     protected virtual void Start()
     {
-        SpawnMoney();
     }
 
-    private async void SpawnMoney()
+    public async void SpawnMoney()
     {
         if (!Application.isPlaying)
         {
