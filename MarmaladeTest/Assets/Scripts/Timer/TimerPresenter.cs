@@ -8,7 +8,6 @@ public class TimerPresenter : MonoBehaviour
     [SerializeField] private TimerModel _timerModel;
 
     [SerializeField] private TMP_Text _timerText;
-
     private void Awake()
     {
         _timerModel.TimerStopped += ShowEndScreen;
@@ -30,6 +29,8 @@ public class TimerPresenter : MonoBehaviour
 
     private void ShowEndScreen()
     {
+        //((LevelManagerMarmaladeTestScene)LevelManager.Instance).GetGameOverPresenter.TogglePause();
+        ((LevelManagerMarmaladeTestScene)LevelManager.Instance).GetGameOverPresenter.ShowGameOver();
         Debug.Log("Showing end screen");
     }
 }

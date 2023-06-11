@@ -78,7 +78,7 @@ public class CarAIManager : MonoBehaviour
 
     public async void SpawnCar()
     {
-        if (!Application.isPlaying)
+        if (!Application.isPlaying || GameTimeUtility._isPaused == true)
         {
             return;
         }

@@ -78,7 +78,7 @@ public class MoneyManager : MonoBehaviour
     }
     public async void SpawnMoney()
     {
-        if (!Application.isPlaying)
+        if (!Application.isPlaying || GameTimeUtility._isPaused == true)
         {
             return;
         }
