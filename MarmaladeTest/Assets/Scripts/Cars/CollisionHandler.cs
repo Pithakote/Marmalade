@@ -16,6 +16,19 @@ public class CollisionHandler : MonoBehaviour
         if (collision.gameObject.tag.Equals("Respawn"))
         {
             _car.ResetPosition();
+            return;
+        }
+
+        if (collision.gameObject.GetComponent<MonoBehaviour>() == null)
+        {
+            return;
+        }
+
+        IInteractable interactable = collision.gameObject.GetComponent<MonoBehaviour>() as IInteractable;
+
+        if (interactable != null)
+        {
+            interactable.OnInteracted();
         }
     }
 }

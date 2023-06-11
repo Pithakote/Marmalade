@@ -6,6 +6,9 @@ using UnityEngine;
 
 internal class InteractableMoney : InteractableObject
 {
+    public delegate void InteractableMoneyDelegate();
+    public InteractableMoneyDelegate OnInteraction;
+
     [SerializeField] private MoneySO _moneyData;
 
     [SerializeField] private TMP_Text _text;
@@ -37,6 +40,7 @@ internal class InteractableMoney : InteractableObject
         }
 
         Debug.Log("Collected amount: " + _moneyData.MoneyAmount);
+        Destroy(this.gameObject);
     }
 }
 

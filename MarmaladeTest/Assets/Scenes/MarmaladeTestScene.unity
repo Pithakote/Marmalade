@@ -327,6 +327,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2934877060514560710, guid: a104d8c121fad37478be13fabdae1b7a, type: 3}
+      propertyPath: _moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3162781618716453196, guid: a104d8c121fad37478be13fabdae1b7a, type: 3}
       propertyPath: m_Name
       value: CarPlayer Variant
@@ -445,7 +449,7 @@ MonoBehaviour:
   _spawnArea: {fileID: 0}
   _spawnSpan: {x: 19.5, y: 10, z: 21.18}
   _spawnRadius: 12
-  _spawnIntervalsInSeconds: 0.5
+  _spawnIntervalsInSeconds: 2
   _spawnPrefab: {fileID: 2727495527084225585, guid: 290bab4a4a1c178499a62710f3bf66dd, type: 3}
   _numberOfMoneyToSpawn: 15
 --- !u!4 &2079849646
