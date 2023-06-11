@@ -7,7 +7,8 @@ public class CollisionBehaviourPlayer : CollisionBehaviour
 {
     public override void CollisionBehaviourAction(Collision collision)
     {
-        IInteractable interactable = collision.gameObject.GetComponent<MonoBehaviour>() as IInteractable;
+        IInteractable interactable = collision.gameObject.GetComponent<InteractableObject>() as IInteractable;
+
 
         if (interactable != null)
         {
