@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5118349089287913836}
   - component: {fileID: 5126364547277932549}
   - component: {fileID: 4482717942339519290}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 2623986043382297076}
   - component: {fileID: 8246088749717515810}
   - component: {fileID: 5725998241882038491}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 914200128918796022}
   - component: {fileID: 4225904268005394654}
   - component: {fileID: 5636771561021914985}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 6999267721101696875}
   - component: {fileID: 4407017800882286434}
   - component: {fileID: 6781940703579087628}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
