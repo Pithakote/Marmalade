@@ -8,7 +8,6 @@ public abstract class Cars : MonoBehaviour
 {
     [SerializeField] protected Rigidbody _rb;
     [SerializeField] private float _moveSpeed = 2.0f;
-    [SerializeField] private float _gravity = 15.0f;
 
     [Header("Scene objects")]
     [SerializeField] Vector3 _transformRespawnPoint;
