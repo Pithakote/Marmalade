@@ -12,8 +12,18 @@ public class MoneySpawner : MonoBehaviour
     [SerializeField] private float _spawnRadius;
     [SerializeField] private float _spawnIntervalsInSeconds = 2;
     [SerializeField] private GameObject _spawnPrefab;
+
+
+    [SerializeField] private Queue<InteractableMoney> _moneySpawnQueue = new Queue<InteractableMoney>();
+    [SerializeField] private int _numberOfMoneyToSpawn = 15;
+
+    private GameObject _spawnedMoney;
     protected virtual void Start()
     {
+        //if (_moneySpawnQueue.Count <= 15)
+        //{ 
+        //
+        //}
         SpawnMoney();
     }
 
@@ -27,7 +37,11 @@ public class MoneySpawner : MonoBehaviour
                                                             0.0f,
                                                             Random.Range(-Random.insideUnitSphere.z * _spawnRadius, Random.insideUnitSphere.z * _spawnRadius));
 
-        Instantiate(_spawnPrefab, _spawnPosition, Quaternion.identity);
+        _spawnedMoney = Instantiate(_spawnPrefab, _spawnPosition, Quaternion.identity);
+
+        _spawnedMoney.GetComponent<InteractableMoney>().SetMoneyData(_moneyTypes[Random.Range(0, _moneyTypes.Count - 1)]);
+
+
         SpawnMoney();
     }
     private async Task SpawnInInterval(int time)
