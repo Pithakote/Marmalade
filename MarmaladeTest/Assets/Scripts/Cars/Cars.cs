@@ -50,6 +50,8 @@ public abstract class Cars : MonoBehaviour
     {
         _rb.Sleep();
         transform.position = _transformRespawnPoint;
+       
+        if(_transformSpawn)
         transform.rotation = _transformSpawn.rotation;
     }
 }

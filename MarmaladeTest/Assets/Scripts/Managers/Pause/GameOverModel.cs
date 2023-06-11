@@ -7,14 +7,20 @@ using UnityEngine.SceneManagement;
 public class GameOverModel : MonoBehaviour
 {
     [SerializeField] private string nameOfSceneToChangeTo;
-    public void TogglePause()
+
+    private void Awake()
+    {
+        TogglePause(false);
+    }
+
+    public void TogglePause(bool pause)
     { 
-        GameTimeUtility._isPaused = !GameTimeUtility._isPaused;
+        GameTimeUtility._isPaused = pause;
     }
 
     public void GameOverFunction()
     {
-        TogglePause();
+        TogglePause(true);
     }
 
     public void ChangeScene()
