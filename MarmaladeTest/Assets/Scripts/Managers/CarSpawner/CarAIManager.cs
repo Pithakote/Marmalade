@@ -14,7 +14,7 @@ public class CarAIManager : MonoBehaviour
     [SerializeField] private GameObject _spawnPrefab;
 
     [SerializeField] private Transform _spawnTransform;
-
+    [SerializeField] private Transform _spawnTransformOld;
     protected virtual void Awake()
     {
 
@@ -22,14 +22,28 @@ public class CarAIManager : MonoBehaviour
 
     protected virtual void Start()
     {
+        _spawnTransform = _aiCarSpawnTransforms[Random.Range(0, _aiCarSpawnTransforms.Count - 1)];
+        _spawnTransformOld = _aiCarSpawnTransforms[Random.Range(0, _aiCarSpawnTransforms.Count - 1)];
+
         SpawnMoney();
     }
 
     private async void SpawnMoney()
     {
-        await SpawnInInterval((int)(Random.Range(_spawnIntervalsInSeconds, _spawnIntervalsInSecondsMax) * 1000));
+        if (!Application.isPlaying)
+        {
+            return;
+        }
 
-        _spawnTransform = _aiCarSpawnTransforms[Random.Range(0, _aiCarSpawnTransforms.Count - 1)];
+        while (_spawnTransformOld == _spawnTransform)
+        {
+            _spawnTransform = _aiCarSpawnTransforms[Random.Range(0, _aiCarSpawnTransforms.Count - 1)];
+        }
+
+        _spawnTransformOld = _spawnTransform;
+
+
+        await SpawnInInterval((int)(Random.Range(_spawnIntervalsInSeconds, _spawnIntervalsInSecondsMax) * 1000));
 
         _spawnedCar = Instantiate(_spawnPrefab,
                                     _spawnTransform.position,

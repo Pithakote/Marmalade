@@ -35,6 +35,11 @@ public class MoneyManager : MonoBehaviour
 
     private async void SpawnMoney()
     {
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+
         await SpawnInInterval((int)(_spawnIntervalsInSeconds * 1000));
 
         _spawnPosition = transform.position +
